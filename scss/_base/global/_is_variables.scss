@@ -1,0 +1,133 @@
+// ================================================== //
+//
+//  INFUSIONSOFT GLOBAL VARIABLES
+//
+// ================================================== //
+
+// SECTION 1 -- INFUSIONSOFT COLORS
+// SECTION 2 -- BUTTONS
+// SECTION 3 -- FONTS
+// SECTION 4 -- FORMS
+// SECTION 5 -- FILTER DROPDOWNS
+
+// =================================== //
+//
+//  SECTION 1 -- INFUSIONSOFT COLORS
+//
+// =================================== //
+
+
+// INFUSIONSOFT MAIN COLOR PALETTE
+$is_green:        #79BE37;
+$is_gray_blue:    #303442;
+$is_grey_blue:    $is_gray_blue;
+
+  // RGB Values
+  $rgb_is_green:        rgb(121,190,55);
+  $rgb_is_gray_blue:    rgb(47,52,65);
+  $rgb_is_grey_blue:    $rgb_is_gray_blue;
+
+// INFUSIONSOFT SECONDARY COLOR PALETTE
+$is_blue:         #00BAF7;
+$is_purple:       #8464CA;
+$is_orange:       #FF9610;
+$is_yellow:       #F7C51E;
+$is_red:          #ED4728;
+
+  // RGB Values
+  $rgb_is_blue:         rgb(0,186,247);
+  $rgb_is_purple:       rgb(132,100,202);
+  $rgb_is_orange:       rgb(255,150,16);
+  $rgb_is_yellow:       rgb(247,197,30);
+  $rgb_is_red:          rgb(237,71,40);
+
+// INFUSIONSOFT GREY PALETTE
+$is_slate_gray:   #F5F5F5;
+$is_slate_grey:   $is_slate_gray;
+$is_para_text:    #656565;
+
+  // RGB Values
+  $rgb_is_slate_gray:   rgb(245,245,245);
+  $rgb_is_slate_grey:   $rgb_is_slate_gray;
+  $rgb_is_para_text:    rgb(101,101,101);
+
+// INFUSIONSOFT DEFAULT
+$is_black:        #000000;
+$is_white:        #FFFFFF;
+
+  $rgb_is_black:        rgb(0,0,0);
+  $rgb_is_white:        rgb(255,255,255);
+
+//
+// COLOR LISTS
+//
+// IMPORTANT: Blue and Purple are in `primary` for these purposes
+// Please see helpers/_is_colors for the respective mixins
+//
+
+$primaryList: (
+  'green': $is_green,
+  'grayblue': $is_gray_blue
+);
+
+$secondaryList: (
+  'blue': $is_blue,
+  'purple': $is_purple,
+  'orange': $is_orange,
+  'yellow': $is_yellow,
+  'red': $is_red
+);
+
+$grayList: (
+  'slategray': $is_slate_gray,
+  'textgray': $is_para_text,
+  'white': $is_white
+);
+
+
+// =================================== //
+//
+//  SECTION 2 -- BUTTON VARIABLES
+//
+// =================================== //
+
+// Standard Buttons
+$btn_font_size: rem-calc(14);
+$btn_line_height: rem-calc(16);
+$btn_default_pad_sides: rem-calc(38);
+$btn_default_pad_vert: rem-calc(15);
+$btn_border_width: 2px;
+$btn_border_radius: 3px;
+$btn_default_font_weight: 600;
+$btn_default_letter_spacing: 1.08px;
+$btn_hover_shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.29), 0 6px 8px 0 rgba(0,0,0,0.13);
+$btn_disabled_color: #C2C2C2;
+
+// Play Buttons
+$play_btn_size_default: rem-calc(75);
+
+
+// =================================== //
+//
+//  SECTION 3 -- FONT VARIABLES
+//
+// =================================== //
+
+$is_font_family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$is_header_color: $is_gray_blue; // see above
+$is_para_color: $is_para_text; // see above
+
+// =================================== //
+//
+//  SECTION 4 -- FORM VARIABLES
+//
+// =================================== //
+
+
+// =================================== //
+//
+//  SECTION 5 -- FILTER DROPDOWNS
+//
+// =================================== //
+
+

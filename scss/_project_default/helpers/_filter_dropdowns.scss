@@ -1,0 +1,94 @@
+
+.filter-bar {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: $filter_bar_pad_vert $primary_header_pad_side_value;
+  background-color: $is_white;
+  box-shadow: $filter_bar_box_shadow;
+  z-index: 1;
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+.filter-title {
+  width: 20%;
+  p {
+    margin: 0;
+    line-height: 50px;
+  }
+}
+
+.filter-dd-container {
+  width: 80%;
+}
+
+.filter-title,
+.filter-dd-container {
+  float: left;
+  @media screen and (max-width: 1024px) {
+    float: none;
+    width: 100%;
+  }
+}
+
+.filter-dd {
+  position: relative;
+  background-color: $is_white;
+  width: 100%;
+  max-width: $filter_dd_max_width;
+  border-radius: $filter_dd_border_radius;
+  margin: auto;
+  padding: $filter_dd_padding;
+  line-height: $filter_dd_line_height;
+  border: $filter_dd_border;
+  cursor: pointer;
+  outline: 0;
+  overflow: hidden;
+  > span {
+    line-height: $filter_dd_line_height;
+    font-weight: $filter_dd_font_weight;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $filter_dd_icon_width;
+    padding: $filter_dd_icon_padding;
+    max-height: $filter_dd_icon_max_height;
+    font-family: "infuse-icons";
+    color: $is_white;
+    text-align: center;
+    background-color: $is_blue;
+    border: $filter_dd_icon_border;
+    border-top-left-radius: $filter_dd_border_radius;
+    border-bottom-left-radius: $filter_dd_border_radius;
+  }
+  // dropdown triangle
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: $filter_dd_arrow_top_position;
+    right: $filter_dd_arrow_right_position;
+    margin-top: $filter_dd_arrow_margin_top;
+    border-width: $filter_dd_arrow_border_down;
+    border-style: solid;
+    border-color: $filter_dd_arrow_border_color;
+  }
+  @media #{$small-only} {
+    margin: 5px auto;
+  }
+  &.filter-dd-country {
+    &:before {
+      content: "\e604";
+    }
+
+  }
+
+}

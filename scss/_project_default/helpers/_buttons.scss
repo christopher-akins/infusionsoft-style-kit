@@ -1,0 +1,75 @@
+// ================================================== //
+//
+//  PROJECT LEVEL BUTTONS
+//
+// ================================================== //
+
+// Calls the standardBtn mixin in `_base/helpers/_is_button`
+// @params -> $type, $size, $bgColor, $txtColor
+// Note: See default values below.
+
+// Default Values for the 6 main button values and 2 Disabled
+$primary_btn_values: 'primary', 'default', $is_green, $is_white;
+$secondary_btn_values: 'secondary', 'default', $is_white, $is_green;
+$secondary_btn_border_values: 'border', 'default', $is_white, $is_green;
+$primary_btn_small_values: 'primary', 'small', $is_green, $is_white;
+$secondary_btn_small_values: 'secondary', 'small', $is_white, $is_green;
+$secondary_btn_border_small_values: 'border', 'small', $is_white, $is_green;
+
+$disabled_btn_values: 'disable', 'default', $btn_disabled_color, $is_white;
+$disabled_btn_small_values: 'disable', 'small', $btn_disabled_color, $is_white;
+
+/* Button Styles */
+
+// PRIMARY BUTTONS
+.btn-primary {
+  @include standardBtn($primary_btn_values...);
+}
+
+.btn-primary-small {
+  @include standardBtn($primary_btn_small_values...);
+}
+
+// SECONDARY BUTTONS
+.btn-secondary {
+  @include standardBtn($secondary_btn_values...);
+}
+
+.btn-secondary-small {
+  @include standardBtn($secondary_btn_small_values...);
+}
+
+// FOR BORDERS - Only on secondary buttons and on white backgrounds
+.btn-secondary-border {
+  @include standardBtn($secondary_btn_border_values...);
+}
+
+.btn-secondary-small-border {
+  @include standardBtn($secondary_btn_border_small_values...);
+}
+
+// DISABLED BUTTONS
+.btn-disabled {
+  @include standardBtn($disabled_btn_values...);
+}
+
+.btn-disabled-small {
+  @include standardBtn($disabled_btn_small_values...);
+}
+
+// EXTRA COLORS - PRIMARY
+
+// example:
+//
+// .btn-primary-purple {
+//  @include standardBtn('primary', 'default', $is_purple, $is_white);
+// }
+//
+
+//
+// Play Button
+//
+.btn-play-primary {
+  @include playBtn('primary', $is_white, $is_green);
+}
+

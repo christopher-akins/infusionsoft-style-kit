@@ -1,0 +1,20 @@
+//
+// BASE Variables and Mixins for Project use
+//
+// ======================================================
+// Should Import in the following order:
+// ======================================================
+
+// -- 1. GLOBAL - Includes custom Infusionsoft variables, functions, mixins, placeholders
+// -- 2. HELPERS - Includes larger mixins/placeholders for building out components, elements, and possibly structure
+
+// -- 1. GLOBAL
+@import "global/is_functions";
+@import "global/is_variables";
+
+// -- 2. GLOBAL HELPERS
+@import "helpers/is_typography";
+/*different global buttons */
+@import "helpers/is_buttons";
+@import "helpers/is_colors";
+@import "helpers/is_spacing";

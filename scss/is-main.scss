@@ -1,0 +1,27 @@
+//
+// MAIN STYLESHEET - COMPILED INTO SEPARATE CSS FILE
+//
+// ======================================================
+// Should Import in the following order:
+// ======================================================
+// -- 1. FONTS -- '/fonts'
+// -- 2. GLOBAL MAIN BASE -- '/base'
+// -- 3. FRAMEWORK LIBRARY -- '/framework'
+// -- 4. PLUGINS AND VENDOR LIBRARIES - Additional vendor/plugin dependencies -- Also in '/vendor'
+// -- 5. PROJECT COMPONENTS - Navbars, footers, components -- '/project'
+
+
+// -- 1. FONTS
+@import "_fonts/font_base";
+
+// -- 2. GLOBAL MAIN BASE
+@import "_base/global_base";
+
+// -- 3. FRAMEWORK LIBRARY (FOUNDATION -- Includes Normalize)
+@import "_framework/foundation_base_grid";
+
+// -- 4. PLUGINS AND VENDOR LIBRARIES
+@import "_vendor/vendor_base";
+
+// -- 5. PROJECT DEPENDANTS - Project specific variables, mixins, components and modules
+@import "_project/project_base";

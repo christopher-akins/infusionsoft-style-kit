@@ -1,0 +1,179 @@
+//
+// BUTTON PLACEHOLDERS AND MIXINS
+//
+
+%btn_main_placeholder {
+  display: inline-block;
+  position: relative;
+  font-size: $btn_font_size;
+  line-height: $btn_line_height;
+  border-style: solid;
+  border-width: $btn_border_width;
+  border-radius: $btn_border_radius;
+  outline: 0;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  &:focus {
+    outline: 1px solid $is_blue;
+  }
+  &:active {
+    outline: 1px solid $is_blue;
+  }
+}
+
+%btn_default {
+  padding: $btn_default_pad_vert $btn_default_pad_sides;
+  font-weight: $btn_default_font_weight;
+  letter-spacing: $btn_default_letter_spacing;
+  text-transform: uppercase;
+}
+
+%btn_small {
+  padding: adjustPadding($btn_default_pad_vert, subtract, rem-calc(5)) adjustPadding($btn_default_pad_sides, subtract, rem-calc(4));
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+%btn_disabled {
+  background-color: $btn_disabled_color;
+  border-color: $btn_disabled_color;
+  cursor: not-allowed;
+  &:focus {
+    outline: 0 !important;
+    background-color: $btn_disabled_color !important;
+    color: $is_white;
+    border-color: $btn_disabled_color !important;
+    box-shadow: none !important;
+  }
+  &:visited {
+    background-color: $btn_disabled_color !important;
+    color: $is_white;
+    border-color: $btn_disabled_color !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+  }
+  &:hover {
+    background-color: $btn_disabled_color !important;
+    color: $is_white;
+    border-color: $btn_disabled_color !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+  }
+  &:active {
+    outline: 0 !important;
+    background-color: $btn_disabled_color !important;
+    color: $is_white;
+    border-color: $btn_disabled_color !important;
+    box-shadow: none !important;
+  }
+}
+
+@mixin btn-primary-hover($bgColor, $txtColor) {
+  &:hover, &:active, &:focus {
+    background-color: lighten($bgColor, 3%);
+    color: $txtColor;
+    border-color: lighten($bgColor, 3%);
+    box-shadow: $btn_hover_shadow;
+  }
+}
+
+@mixin btn-secondary-hover($type, $bgColor, $txtColor) {
+  &:hover, &:active, &:focus {
+    background-color: lighten($bgColor, 6%); // from original state
+    color: $txtColor;
+    border-color: lighten($bgColor, 6%); // from original state
+    box-shadow: $btn_hover_shadow;
+    @if $type == 'sans-border' {
+      border-color: $bgColor; // same as background color
+    } @else if $type == 'border' {
+      color: lighten($txtColor, 6%);
+      border-color: lighten($txtColor, 6%); // same as text color
+    }
+  }
+}
+
+//
+// MIXIN FOR STANDARD BUTTON
+// @param $type     -> 'primary', 'secondary', or 'disabled' - @default is 'primary'
+// @param $size     -> 'default' or 'small' @default is 'default'
+// @param $bgColor  -> background-color - @default is $is_green
+// @param $txtColor -> font color - @default is $is_white
+//
+// See btn values below as lists for params
+//
+
+@mixin standardBtn($type: 'primary', $size: 'default', $bgColor: $is_green, $txtColor: $is_white) {
+  // Extend the main placeholder -- all buttons should have these basic styles
+  @extend %btn_main_placeholder;
+
+  // Determine the type. Primary, secondary, secondary-border, disable
+  @if $type == 'primary'
+  {
+    background-color: $bgColor;
+    color: $txtColor;
+    border-color: $bgColor;
+    @include btn-primary-hover($bgColor, $txtColor);
+  }
+  @else if $type == 'secondary'
+  {
+    background-color: $bgColor;
+    color: $txtColor; // opposite of primary
+    border-color: $bgColor;
+    @include btn-secondary-hover('sans-border', $bgColor, $txtColor);
+  }
+  @else if $type == 'border'
+  {
+    background-color: $bgColor;
+    color: $txtColor;
+    border-color: $txtColor;
+    @include btn-secondary-hover('border', $bgColor, $txtColor);
+  }
+  @else if $type == 'disable'
+  {
+    color: $txtColor;
+    @extend %btn_disabled;
+  }
+
+  // Determine the size
+  @if $size == 'default'
+  {
+    @extend %btn_default;
+  }
+  @else if $size == 'small'
+  {
+    @extend %btn_small;
+  }
+
+  @content;
+}
+
+
+// PRIMARY PLAY BUTTON - White with green triangle
+%play_btn {
+  position: relative;
+  box-shadow: 0 20px 50px 0 rgba(0,0,0,0.1);
+  cursor: pointer;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-6px, -11px);
+    border-style: solid;
+    border-width: 11px 0 11px 17px;
+  }
+}
+
+@mixin playBtn($type: primary, $bg_color: $is_white, $play_color: $is_green, $btn_size: $play_btn_size_default) {
+  @extend %play_btn;
+  background-color: $bg_color;
+  width: $btn_size;
+  height: $btn_size;
+  border-radius: $btn_size;
+  &:after {
+    border-color: transparent transparent transparent $play_color;
+  }
+}

@@ -1,0 +1,99 @@
+// Typography Mixins
+@mixin defaultMrktType() {
+  body {
+    font-family: $is_font_family;
+  }
+// Start with Colors
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .hdr-jumbo {
+    color: $is_header_color;
+    font-family: $is_font_family;
+  }
+
+  p,
+  span,
+  div,
+  li {
+    color: $is_para_color;
+  }
+
+// Font Weight Variants for Headers
+  h1,
+  h3 {
+    font-weight: 700;
+    &.hdr-uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  .hdr-jumbo,
+  h2 {
+    font-weight: 300;
+  }
+
+  h4,
+  h5 {
+    font-weight: 400;
+  }
+
+// Font Sizes and Line-Heights - Kerning
+  .hdr-jumbo {
+    font-size: rem-calc(60);
+    line-height: rem-calc(50);
+  }
+
+  h1 {
+    font-size: rem-calc(50);
+    line-height: rem-calc(50);
+  }
+
+  h2 {
+    font-size: rem-calc(32);
+    line-height: rem-calc(38);
+  }
+
+  h3 {
+    font-size: rem-calc(26);
+    line-height: rem-calc(32);
+  }
+
+  h4 {
+    font-size: rem-calc(20);
+    line-height: rem-calc(28);
+  }
+
+  h5 {
+    font-size: rem-calc(18);
+    line-height: rem-calc(22);
+    letter-spacing: rem-calc(1);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: rem-calc(17);
+    line-height: rem-calc(30);
+  }
+
+  p,
+  span,
+  div,
+  li {
+    font-size: rem-calc(17);
+    &.txt-large {
+      font-size: rem-calc(20);
+      line-height: rem-calc(35);
+    }
+    &.txt-small {
+      font-size: rem-calc(14);
+      line-height: rem-calc(20);
+    }
+    &.txt-uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+}

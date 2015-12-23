@@ -1,0 +1,17 @@
+// ========================================================= //
+//
+//  PROJECT PAGES KEYSTONE
+//
+// ========================================================= //
+
+// Use separately from is-main-styles, as this is a more localized partial for specific project needs.
+
+// SECTION 1 -- GLOBAL VARIABLES, FUNCTIONS, MIXINS
+@import "resources/assets/scss/_base/global_base";
+
+// SECTION 2 -- LOCAL VARIABLES, FUNCTIONS, MIXINS
+@import "../local/variables";
+@import "../local/placeholders";
+@import "../local/mixins";
+
+// SECTION 3 --
